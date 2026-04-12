@@ -91,30 +91,14 @@ async function createWindow(): Promise<void> {
 
   addWebContextMenu(mainWindow)
 
-  const url = getURL()
-
   await loadPlugins()
 
-  protocol.handle('https', async (req: GlobalRequest): Promise<Response> => {
-    const originalResponse = net.fetch(req, { bypassCustomProtocolHandlers: true })
-    const reqUrl = new URL(req.url)
-    // TODO: Make this check a little less specific to the way the config is set
-    if (reqUrl.host === new URL(url).host && reqUrl.pathname.endsWith('.js')) {
-      const responseVal = await originalResponse
-      let responseStr = await responseVal.text()
-      responseStr = await replaceForSource(responseStr)
-      // @ts-ignore Bugged??
-      return new Response(responseStr, {
-        headers: responseVal.headers,
-        status: responseVal.status,
-        statusText: responseVal.statusText
-      })
-    } else {
-      return originalResponse
-    }
-  })
+  // Load local file and trigger onReady when done
+  const loadPromise = app.isPackaged
+    ? mainWindow.loadFile(join(__dirname, '../../dist/index.html'))
+    : mainWindow.loadFile(join(__dirname, '../../cinny/dist/index.html'))
 
-  mainWindow.loadURL(url).then(() => {
+  loadPromise.then(() => {
     onReady()
   })
 
