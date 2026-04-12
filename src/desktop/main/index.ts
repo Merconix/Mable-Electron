@@ -27,7 +27,7 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
-  url: 'https://app.sable.moe'
+  url: 'https://merconix.com/sable'
 }
 
 export const config = new Store({
@@ -142,7 +142,7 @@ function getURL(): string {
   return (
     process.env.CINNY_DEVELOPMENT_SERVER ??
     config.get<string, string>('url') ??
-    'https://app.sable.moe'
+    'https://merconix.com/sable/'
   )
 }
 
