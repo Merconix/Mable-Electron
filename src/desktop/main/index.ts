@@ -27,7 +27,7 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
-  url: 'https://app.cinny.in'
+  url: 'https://app.sable.moe'
 }
 
 export const config = new Store({
