@@ -142,7 +142,7 @@ function getURL(): string {
   return (
     process.env.CINNY_DEVELOPMENT_SERVER ??
     config.get<string, string>('url') ??
-    'https://app.cinny.in'
+    'https://app.sable.moe'
   )
 }
 
