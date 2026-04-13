@@ -91,8 +91,6 @@ async function createWindow(): Promise<void> {
 
   addWebContextMenu(mainWindow)
 
-  const url = getURL()
-
   await loadPlugins()
 
   protocol.handle('https', async (req: GlobalRequest): Promise<Response> => {
@@ -152,20 +150,6 @@ function handleUrlOpen(url: string | undefined): void {
   if (mainWindow) {
     if (mainWindow.isMinimized()) mainWindow.restore()
     mainWindow.show()
-  }
-
-  if (url?.startsWith('matrix:')) {
-    const base = url?.slice('matrix:'.length, url?.length)
-    if (base) {
-      const room = base.split('?action=')[1]
-      // Only know how to manually deal with r/ links
-      if (!room.startsWith('r/')) return
-      if (mainWindow) {
-        const url = new URL(getURL())
-        url.pathname = '/home/' + encodeURIComponent(room.replace('r/', '#'))
-        mainWindow.webContents.loadURL(url.toString())
-      }
-    }
   }
 }
 
