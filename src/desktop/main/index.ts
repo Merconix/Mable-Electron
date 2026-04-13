@@ -27,6 +27,7 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
+  url: 'https://merconix.com/sable'
 }
 
 export const config = new Store({
@@ -90,6 +91,8 @@ async function createWindow(): Promise<void> {
 
   addWebContextMenu(mainWindow)
 
+  const url = getURL()
+
   await loadPlugins()
 
   protocol.handle('https', async (req: GlobalRequest): Promise<Response> => {
@@ -142,6 +145,34 @@ function getURL(): string {
     'https://merconix.com/sable/'
   )
 }
+
+// Assumed url is in format `matrix:r/roomname:homeserver?action=join`
+function handleUrlOpen(url: string | undefined): void {
+  // Someone tried to run a second instance, we should focus our window.
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore()
+    mainWindow.show()
+  }
+
+  if (url?.startsWith('matrix:')) {
+    const base = url?.slice('matrix:'.length, url?.length)
+    if (base) {
+      const room = base.split('?action=')[1]
+      // Only know how to manually deal with r/ links
+      if (!room.startsWith('r/')) return
+      if (mainWindow) {
+        const url = new URL(getURL())
+        url.pathname = '/home/' + encodeURIComponent(room.replace('r/', '#'))
+        mainWindow.webContents.loadURL(url.toString())
+      }
+    }
+  }
+}
+
+// macOS handler for single instance redirection. TODO This may need different parsing.
+app.on('open-url', (_event, url) => {
+  handleUrlOpen(url)
+})
 
 app.on('second-instance', (_event, commandLine) => {
   handleUrlOpen(commandLine.pop())
