@@ -27,7 +27,6 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
-  url: 'https://merconix.com/sable'
 }
 
 export const config = new Store({
