@@ -146,15 +146,6 @@ function getURL(): string {
   )
 }
 
-// Assumed url is in format `matrix:r/roomname:homeserver?action=join`
-function handleUrlOpen(): void {
-  // Someone tried to run a second instance, we should focus our window.
-  if (mainWindow) {
-    if (mainWindow.isMinimized()) mainWindow.restore()
-    mainWindow.show()
-  }
-}
-
 function initializeLogging(): void {
   log.initialize()
   log.transports.file.level = 'debug'
