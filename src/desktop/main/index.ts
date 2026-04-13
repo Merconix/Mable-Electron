@@ -144,20 +144,6 @@ function getURL(): string {
   )
 }
 
-// Assumed url is in format `matrix:r/roomname:homeserver?action=join`
-function handleUrlOpen(url: string | undefined): void {
-  // Someone tried to run a second instance, we should focus our window.
-  if (mainWindow) {
-    if (mainWindow.isMinimized()) mainWindow.restore()
-    mainWindow.show()
-  }
-}
-
-// macOS handler for single instance redirection. TODO This may need different parsing.
-app.on('open-url', (_event, url) => {
-  handleUrlOpen(url)
-})
-
 app.on('second-instance', (_event, commandLine) => {
   handleUrlOpen(commandLine.pop())
 })
