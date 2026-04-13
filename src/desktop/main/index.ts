@@ -91,8 +91,6 @@ async function createWindow(): Promise<void> {
 
   addWebContextMenu(mainWindow)
 
-  const url = getURL()
-
   await loadPlugins()
 
   protocol.handle('https', async (req: GlobalRequest): Promise<Response> => {
