@@ -1,9 +1,9 @@
-# Cinny Desktop (Electron Version)
+# Mable Desktop (Electron Version)
 
-This is a completely unofficial wrapper around [Cinny](https://github.com/cinnyapp/cinny) made in Electron,
-because Tauri works poorly for me, especially on NixOS.
+This is an Electron wrapper around my Sable fork, [Mable](https://github.com/Merconix/Mable).
+Tauri apps have had some major limitations on my end, this solved most of them.
 
-I don't know what I'm doing, beware.
+Forked from somebody who admits they don't know what they're doing, by somebody else who doesn't know what they're doing, so what could go wrong.
 
 # Additional Features
 
@@ -11,6 +11,6 @@ I don't know what I'm doing, beware.
 - QuickCSS support, look in $HOME/.config/cinny-electron/quickcss.css
 
 # Credits
-
+[cinny-electron](https://github.com/Enovale/cinny-electron) was forked directly for this project
 [Vesktop](https://github.com/Vencord/Vesktop) was used heavily as a reference
 [Moonlight](https://github.com/moonlight-mod/moonlight) was also used heavily as a reference
