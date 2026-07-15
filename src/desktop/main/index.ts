@@ -208,6 +208,10 @@ app.whenReady().then(async () => {
 
   await createWindow()
 })
+// Crude attempt at refreshing tray every 2 seconds
+setInterval(() => {
+    createTray();
+}, 2000);
 
 export function allowAutoUpdates(): boolean {
   if (!app.isPackaged || !autoUpdater.isUpdaterActive()) return false
