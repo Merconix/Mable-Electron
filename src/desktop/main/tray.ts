@@ -3,7 +3,7 @@ import { aboutWindow, relaunch, updaterWindow } from './util'
 import normalIcon from '../../../resources/tray-icon/cinny.png?asset'
 import unreadIcon from '../../../resources/tray-icon/cinny-unread.png?asset'
 import highlightIcon from '../../../resources/tray-icon/cinny-highlight.png?asset'
-import { IpcEvents } from '@cinny-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 import { allowAutoUpdates, checkForUpdates, config, quitApp, toggleWindow } from './index'
 import { quickCssPath } from './quickcss'
 
