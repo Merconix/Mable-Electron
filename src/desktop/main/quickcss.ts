@@ -1,7 +1,7 @@
 import { readFileSync, watch, writeFileSync, existsSync, WatchEventType } from 'fs'
 import { join } from 'path'
 import { mainWindow } from './index'
-import { IpcEvents } from '@cinny-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 import { dataDir } from './util'
 import { ipcMain } from 'electron'
 import log from 'electron-log/main'
