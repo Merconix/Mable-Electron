@@ -1,6 +1,6 @@
 // Listen for messages
 import { contextBridge, ipcRenderer } from 'electron'
-import { IpcEvents } from '@cinny-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 
 contextBridge.exposeInMainWorld('checkForUpdates', () => {
   const container = document.getElementById('messages')

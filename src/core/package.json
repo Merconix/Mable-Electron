@@ -1,5 +1,5 @@
 {
-  "name": "@cinny-electron/core",
+  "name": "@mable-electron/core",
   "private": true,
   "type": "module",
   "types": "src/index.ts",
@@ -10,7 +10,7 @@
     "build": "pnpm run typecheck"
   },
   "dependencies": {
-    "@cinny-electron/types": "workspace:*"
+    "@mable-electron/types": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:dev",

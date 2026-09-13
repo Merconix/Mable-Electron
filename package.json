@@ -1,12 +1,12 @@
 {
-  "name": "cinny-electron",
+  "name": "mable-electron",
   "private": true,
-  "version": "1.1.1",
-  "description": "Electron wrapper around Cinny, Yet another matrix client",
+  "version": "1.2.0",
+  "description": "Electron wrapper around Mable, A M(ostly st)able matrix client",
   "main": "./out/main/index.js",
-  "author": "Enova",
+  "author": "Enova, Merc",
   "type": "module",
-  "homepage": "https://github.com/Enovale/cinny-electron",
+  "homepage": "https://github.com/Merconix/Mable-electron",
   "packageManager": "pnpm@10.20.0",
   "scripts": {
     "format": "prettier --write .",
@@ -22,8 +22,8 @@
     "build:linux": "pnpm run build && electron-builder --linux"
   },
   "dependencies": {
-    "@cinny-electron/core": "workspace:*",
-    "@cinny-electron/types": "workspace:*",
+    "@mable-electron/core": "workspace:*",
+    "@mable-electron/types": "workspace:*",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@folder/xdg": "^4.0.1",

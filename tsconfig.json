@@ -8,8 +8,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@cinny-electron/core/*": ["./src/core/*"],
-      "@cinny-electron/types/*": ["./src/types/*"],
+      "@mable-electron/core/*": ["./src/core/*"],
+      "@mable-electron/types/*": ["./src/types/*"],
     },
     "composite": true,
     "types": ["electron-vite/node", "node"]
