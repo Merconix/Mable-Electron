@@ -22,8 +22,8 @@
     "build:linux": "pnpm run build && electron-builder --linux"
   },
   "dependencies": {
-    "@cinny-electron/core": "workspace:*",
-    "@cinny-electron/types": "workspace:*",
+    "@mable-electron/core": "workspace:*",
+    "@mable-electron/types": "workspace:*",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@folder/xdg": "^4.0.1",
