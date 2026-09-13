@@ -15,7 +15,6 @@ export const patches: PluginExports['patches'] = [
       match: /(,\i\((\i)\?(\i)\?\i:\i:\i\))/,
       replacement: `$1;${alertFaviconChange.toString().replaceAll(`{{EVENT}}`, IpcEvents.FAVICON_CHANGED)}alertFaviconChange($2, $3)`
     }
-    console.log(`$1;${alertFaviconChange.toString().replaceAll(`{{EVENT}}`, IpcEvents.FAVICON_CHANGED)}alertFaviconChange($2, $3)`)
   }
 ]
 
