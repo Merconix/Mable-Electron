@@ -62,7 +62,7 @@ export async function updateAutostart(autostart: boolean | undefined): Promise<v
         writeFileSync(
           autostartFile,
           `[Desktop Entry]
-Name=Cinny
+Name=Mable
 Exec=${executable} %U
 Terminal=false
 Type=Application
@@ -70,8 +70,8 @@ Icon=${app.name}
 StartupWMClass=${app.name}
 GenericName=Internet Messenger
 Categories=Network;
-Keywords=matrix;cinny;electron;chat;
-Comment=Yet another matrix client
+Keywords=matrix;mable;electron;chat;
+Comment=A M(ostly st)able matrix client
 MimeType=x-scheme-handler/matrix;`
         )
       } else {
