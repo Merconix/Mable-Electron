@@ -8,7 +8,7 @@ Forked from somebody who admits they don't know what they're doing, by somebody 
 # Additional Features
 
 - Tray icon shows whether there are notifications or not
-- QuickCSS support, look in $HOME/.config/cinny-electron/quickcss.css
+- QuickCSS support, look in $HOME/.config/mable-electron/quickcss.css
 
 # Credits
 [cinny-electron](https://github.com/Enovale/cinny-electron) was forked directly for this project
