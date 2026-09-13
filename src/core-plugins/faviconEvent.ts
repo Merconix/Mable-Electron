@@ -1,5 +1,5 @@
-import { PluginExports } from '@cinny-electron/types'
-import { IpcEvents } from '@cinny-electron/core'
+import { PluginExports } from '@mable-electron/types'
+import { IpcEvents } from '@mable-electron/core'
 import { ElectronAPI } from '@electron-toolkit/preload'
 
 declare global {
