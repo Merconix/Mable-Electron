@@ -8,7 +8,7 @@ import { readdirSync } from 'node:fs'
 const chunks = ['core', 'types']
 // TODO currently this repacks for all bundles that needs them
 const exclusions: ExternalOptions = {
-  exclude: chunks.map((v) => `@cinny-electron/${v}`)
+  exclude: chunks.map((v) => `@mable-electron/${v}`)
 }
 
 const files = (
