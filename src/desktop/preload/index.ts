@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
-import { IpcEvents } from '@cinny-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 import log from 'electron-log/renderer'
 
 Object.assign(console, log.functions)
