@@ -23,10 +23,10 @@ importers:
 
   .:
     dependencies:
-      '@cinny-electron/core':
+      '@mable-electron/core':
         specifier: workspace:*
         version: link:src/core
-      '@cinny-electron/types':
+      '@mable-electron/types':
         specifier: workspace:*
         version: link:src/types
       '@electron-toolkit/preload':
@@ -93,7 +93,7 @@ importers:
 
   src/core:
     dependencies:
-      '@cinny-electron/types':
+      '@mable-electron/types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
