@@ -1,7 +1,5 @@
 import {
   app,
-  protocol,
-  net,
   shell,
   BrowserWindow,
   ipcMain,
@@ -11,7 +9,7 @@ import {
 import { join, resolve } from 'path'
 import { electronApp, is } from '@electron-toolkit/utils'
 import Store from 'electron-store'
-import { IpcEvents, loadPlugins, replaceForSource } from '@mable-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 import icon from '../../../resources/tray-icon/cinny.png?asset'
 import { createTray } from './tray'
 import { startQuickCSSWatch } from './quickcss'
@@ -27,7 +25,7 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
-  url: 'https://mable.merconix.com'
+  url: 'https://merconix.com/mable'
 }
 
 export const config = new Store({
@@ -93,27 +91,6 @@ async function createWindow(): Promise<void> {
 
   const url = getURL()
   
-  await loadPlugins()
-
-  protocol.handle('https', async (req: GlobalRequest): Promise<Response> => {
-    const originalResponse = net.fetch(req, { bypassCustomProtocolHandlers: true })
-    const reqUrl = new URL(req.url)
-    // TODO: Make this check a little less specific to the way the config is set
-    if (reqUrl.host === new URL(url).host && reqUrl.pathname.endsWith('.js')) {
-      const responseVal = await originalResponse
-      let responseStr = await responseVal.text()
-      responseStr = await replaceForSource(responseStr)
-      // @ts-ignore Bugged??
-      return new Response(responseStr, {
-        headers: responseVal.headers,
-        status: responseVal.status,
-        statusText: responseVal.statusText
-      })
-    } else {
-      return originalResponse
-    }
-  })
-
   mainWindow.loadURL(url).then(() => {
     onReady()
   })
