@@ -62,7 +62,7 @@ async function createWindow(): Promise<void> {
     // remove the default titlebar
     titleBarStyle: 'hidden',
     // expose window controls in Windows/Linux
-    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {})
+    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
