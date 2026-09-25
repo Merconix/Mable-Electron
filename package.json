@@ -1,7 +1,7 @@
 {
   "name": "mable-electron",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Electron wrapper around Mable, A M(ostly st)able matrix client",
   "main": "./out/main/index.js",
   "author": "Enova, Merc",
