@@ -11,7 +11,7 @@ import {
 import { join, resolve } from 'path'
 import { electronApp, is } from '@electron-toolkit/utils'
 import Store from 'electron-store'
-import { IpcEvents, loadPlugins } from '@mable-electron/core'
+import { IpcEvents } from '@mable-electron/core'
 import icon from '../../../resources/tray-icon/cinny.png?asset'
 import { createTray } from './tray'
 import { startQuickCSSWatch } from './quickcss'
