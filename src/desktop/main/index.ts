@@ -1,7 +1,5 @@
 import {
   app,
-  protocol,
-  net,
   shell,
   BrowserWindow,
   ipcMain,
