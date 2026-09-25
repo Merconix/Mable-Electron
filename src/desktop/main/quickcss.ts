@@ -11,7 +11,7 @@ export const quickCssPath = join(dataDir, 'quickCSS.css')
 export function startQuickCSSWatch(): void {
   log.info('Starting quickcss')
   if (!existsSync(quickCssPath)) {
-    writeFileSync(quickCssPath, 'test')
+    writeFileSync(quickCssPath, '/* Put custom CSS here */')
   }
 
   // We should handle the renderer loading and resend the quickcss
