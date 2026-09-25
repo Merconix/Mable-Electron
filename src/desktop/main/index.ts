@@ -65,7 +65,7 @@ async function createWindow(): Promise<void> {
       color: '#242424',
       symbolColor: '#ffd600',
       height: 60
-    ,
+    },
     // expose window controls in Windows/Linux
     ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
     autoHideMenuBar: true,
