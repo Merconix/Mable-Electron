@@ -78,6 +78,7 @@ async function createWindow(): Promise<void> {
 
   mainWindow.on('ready-to-show', () => {
     if (!config.get('startHidden')) mainWindow?.show()
+    onReady()
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
