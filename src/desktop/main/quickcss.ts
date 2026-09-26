@@ -1,4 +1,4 @@
-import { readFileSync, watch, writeFileSync, existsSync, WatchEventType } from 'fs'
+import { readFileSync, watch, writeFileSync, WatchEventType } from 'fs'
 import { join } from 'path'
 import { mainWindow } from './index'
 import { IpcEvents } from '@mable-electron/core'
