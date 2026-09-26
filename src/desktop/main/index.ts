@@ -56,16 +56,16 @@ app.on('before-quit', () => {
 async function createWindow(): Promise<void> {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1080,
+    height: 720,
     show: false,
     // remove the default titlebar
     titleBarStyle: 'hidden',
     // expose window controls in Windows/Linux
     titleBarOverlay: {
-      color: '#00000000',
+      color: '#303030',
       symbolColor: '#afafafa6',
-      height: 60
+      height: 54
     },
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
