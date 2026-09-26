@@ -62,8 +62,8 @@ async function createWindow(): Promise<void> {
     // remove the default titlebar
     titleBarStyle: 'hidden',
     titleBarOverlay: {
-      color: '#242424',
-      symbolColor: '#ffd600',
+      color: '#ff0000',
+      symbolColor: '#00ff00',
       height: 60
     },
     // expose window controls in Windows/Linux
