@@ -61,13 +61,12 @@ async function createWindow(): Promise<void> {
     show: false,
     // remove the default titlebar
     titleBarStyle: 'hidden',
+    // expose window controls in Windows/Linux
     titleBarOverlay: {
       color: '#ff0000',
       symbolColor: '#00ff00',
       height: 60
     },
-    // expose window controls in Windows/Linux
-    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
