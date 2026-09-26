@@ -100,9 +100,7 @@ async function createWindow(): Promise<void> {
 
   const url = getURL()
   
-  mainWindow.loadURL(url).then(() => {
-    onReady()
-  })
+  mainWindow.loadURL(url)
 
   if (is.dev) mainWindow.webContents.openDevTools()
 }
