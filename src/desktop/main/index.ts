@@ -25,7 +25,7 @@ export const configDefault = {
   enableQuickCSS: true,
   autostart: false,
   startHidden: false,
-  url: 'https://merconix.com/mable'
+  url: 'https://merconix.com/test'
 }
 
 export const config = new Store({
@@ -128,7 +128,7 @@ function getURL(): string {
   return (
     process.env.CINNY_DEVELOPMENT_SERVER ??
     config.get<string, string>('url') ??
-    'https://merconix.com/mable/'
+    'https://merconix.com/test/'
   )
 }
 
