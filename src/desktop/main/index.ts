@@ -57,7 +57,7 @@ async function createWindow(): Promise<void> {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1080,
-    height: 720,
+    height: 800,
     show: false,
     // remove the default titlebar
     titleBarStyle: 'hidden',
