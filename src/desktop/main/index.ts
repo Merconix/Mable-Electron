@@ -53,6 +53,9 @@ app.on('before-quit', () => {
   quitting = true
 })
 
+createTray()
+  if (config.get('enableQuickCSS')) startQuickCSSWatch()
+
 async function createWindow(): Promise<void> {
   // Create the browser window.
   mainWindow = new BrowserWindow({
