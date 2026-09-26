@@ -63,8 +63,8 @@ async function createWindow(): Promise<void> {
     titleBarStyle: 'hidden',
     // expose window controls in Windows/Linux
     titleBarOverlay: {
-      color: '#00000055',
-      symbolColor: '#afafafa6',
+      color: '#afafaf00',
+      symbolColor: '#afafaf',
       height: 54
     },
     autoHideMenuBar: true,
